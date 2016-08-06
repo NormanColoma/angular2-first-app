@@ -1,8 +1,9 @@
 # Angular2-First-App
 
-The proposal of this project is to practice Angular 2, and the building of a simple application following the official [Style Guide](https://angular.io/docs/ts/latest/guide/style-guide.html).
+The proposal of this project is to start from the scratch an application based on [Angular 2](https://angular.io/), following the official [Style Guide](https://angular.io/docs/ts/latest/guide/style-guide.html).
 
-At the initial state, I don't care about the UI, I want to focus in Angular 2.This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.10.
+The application consists in a simple list of Writers, where you can read a few description about them, and list some of their 
+most known books. At the initial state, I don't care about the UI, I want to focus in Angular 2.This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.10.
 
 Feel free to ask for a pull request if you want to contribute to this project and get some practice in Angular 2.
 
