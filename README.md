@@ -1,6 +1,10 @@
-# Angular2App
+# Angular2-First-App
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.10.
+The proposal of this project is to practice Angular 2, and the building of a simple application following the official [Style Guide](https://angular.io/docs/ts/latest/guide/style-guide.html)*[]: 
+
+At the initial state, I don't care about the UI, I want to focus in Angular 2.This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.10.
+
+Feel free to ask for a pull request if you want to contribute to this project and get some practice in Angular 2.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -21,10 +25,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
 Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
 
 ## Further help
 
