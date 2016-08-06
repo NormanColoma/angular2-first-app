@@ -1,0 +1,24 @@
+<div class="writers-container">
+  <p>
+    Our most famous Writers:
+  </p>
+  <ul>
+    <li *ngFor="let writer of writers" (click)="onSelect(writer)">
+      <div class="writer-content">
+        <h2>{{writer.name}}</h2>
+        <div class="writer-content-info">
+          <p class="books">Registered books: <span>{{writer.total_books}}</span></p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div *ngIf="selectedWriter">
+  <h3>{{selectedWriter.name | uppercase}}</h3>
+  <p>
+    {{selectedWriter.short_desc}}
+  </p>
+  <button (click)="gotoDetail()">Read More</button>
+  <button (click)="gotoBooks()">See Books</button>
+</div>
+

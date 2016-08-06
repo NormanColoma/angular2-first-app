@@ -1,0 +1,31 @@
+.writers-container{
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: 100;
+  float:left;
+}
+
+.writers-container ul{
+  list-style: none;
+  padding: 0px;
+}
+
+.writers-container ul li{
+  margin-bottom: 40px;
+}
+
+.writer-content-info{
+}
+
+.about{
+  font-style: italic;
+}
+.books{
+  color: #1c94c4;
+}
+
+.books span{
+  color: black !important;
+}
+
+

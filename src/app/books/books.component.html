@@ -1,0 +1,15 @@
+<div class="books-container">
+  <div *ngIf="books.length > 0">
+    <ul>
+      <li *ngFor="let book of books">
+        <h3>{{book.title}}</h3>
+        <p><strong>Synopsis:</strong> {{book.synopsis}}</p>
+        <p><strong>Genre:</strong> {{book.genre}}</p>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf ="books.length === 0">
+    <p>There are no books available at this moment</p>
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

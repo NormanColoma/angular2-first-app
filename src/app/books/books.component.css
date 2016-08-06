@@ -1,0 +1,8 @@
+.books-container{
+  margin-bottom: 30px;
+}
+
+.books-container ul{
+  list-style: none;
+  padding: 0px;
+}
