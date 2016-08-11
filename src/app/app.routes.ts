@@ -1,13 +1,16 @@
 /**
  * Created by Norman on 05/08/2016.
  */
-import { provideRouter, RouterConfig }  from '@angular/router';
+/**
+ * Created by Norman on 05/08/2016.
+ */
+import { Routes, RouterModule }  from '@angular/router';
 import { WritersComponent } from './writers/writers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WriterDetailsComponent } from './writer-details/writer-details.component';
 import { BooksComponent } from './books/books.component';
 
-const routes: RouterConfig = [
+const appRoutes: Routes = [
   {
     path: '',
     redirectTo: '/dashboard',
@@ -30,6 +33,12 @@ const routes: RouterConfig = [
   }
 ];
 
-export const appRouterProviders = [
-  provideRouter(routes)
+export const appRoutingProviders: any[] = [
+
 ];
+
+export const appRouterProviders: any[] = [
+
+];
+
+export const routing = RouterModule.forRoot(appRoutes);

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Writer } from './writer';
 import { WriterService } from './writer.service';
+
 
 @Component({
   moduleId: module.id,
@@ -13,6 +14,7 @@ import { WriterService } from './writer.service';
 export class WritersComponent implements OnInit {
 
   writers: Writer [];
+  currentWriter: Writer;
   selectedWriter: Writer;
   constructor(private router: Router,
               private writerService: WriterService) { }
@@ -22,6 +24,7 @@ export class WritersComponent implements OnInit {
   }
   ngOnInit() {
     this.getWriters();
+    this.currentWriter = new Writer();
   }
 
   onSelect(writer: Writer){
@@ -33,6 +36,13 @@ export class WritersComponent implements OnInit {
   }
 
   gotoBooks(){
-    this.router.navigate(['/writers', this.selectedWriter.id, '/books']);
+    this.router.navigate(['/writers', this.selectedWriter.id, 'books']);
+  }
+
+  addWriter(){
+    let writer = new Writer();
+    writer.name = this.currentWriter.name;
+    writer.total_books = 0;
+    this.writers.push(writer);
   }
 }
