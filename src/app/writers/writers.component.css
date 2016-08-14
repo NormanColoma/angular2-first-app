@@ -27,12 +27,6 @@
 .books span{
   color: black !important;
 }
-
-.writer-add-form-container{
-  float: left;
-  margin-right: 40px;
-  margin-left: 40px;
-}
 .writer-info-container{
   width: 500px;
   float:left;

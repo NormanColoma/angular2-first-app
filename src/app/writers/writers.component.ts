@@ -2,20 +2,25 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Writer } from './writer';
 import { WriterService } from './writer.service';
+import {WriterFormComponent} from "../writer-form/writer-form.component";
 
 
 @Component({
   moduleId: module.id,
   selector: 'writers-list',
   templateUrl: 'writers.component.html',
+  directives: [WriterFormComponent],
   styleUrls: ['writers.component.css']
 })
 
 export class WritersComponent implements OnInit {
 
   writers: Writer [];
-  currentWriter: Writer;
+
   selectedWriter: Writer;
+
+  active = true;
+
   constructor(private router: Router,
               private writerService: WriterService) { }
 
@@ -24,7 +29,6 @@ export class WritersComponent implements OnInit {
   }
   ngOnInit() {
     this.getWriters();
-    this.currentWriter = new Writer();
   }
 
   onSelect(writer: Writer){
@@ -39,10 +43,7 @@ export class WritersComponent implements OnInit {
     this.router.navigate(['/writers', this.selectedWriter.id, 'books']);
   }
 
-  addWriter(){
-    let writer = new Writer();
-    writer.name = this.currentWriter.name;
-    writer.total_books = 0;
-    this.writers.push(writer);
-  }
+
+
+
 }

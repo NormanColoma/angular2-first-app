@@ -1,0 +1,17 @@
+.writer-add-form-container{
+  float: left;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.alert{
+  color:red;
+}

@@ -13,17 +13,7 @@
     </li>
   </ul>
 </div>
-<div class="writer-add-form-container">
-  <h3>Add Writer</h3>
-  <p>Didn't you find the Writer you were looking for? Just add it!</p>
-  <form>
-    <div>
-      <label>Name of the Writer: </label>
-      <input type="text" [(ngModel)]="currentWriter.name" name="name"  required>
-    </div>
-    <input type="submit" value="Add" (click)="addWriter()">
-  </form>
-</div>
+<writer-form [writers]="writers"></writer-form>
 <div *ngIf="selectedWriter" class="writer-info-container">
   <h3>{{selectedWriter.name | uppercase}}</h3>
   <p>
