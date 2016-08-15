@@ -2,14 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Writer } from './writer';
 import { WriterService } from './writer.service';
-import {WriterFormComponent} from "../writer-form/writer-form.component";
 
 
 @Component({
   moduleId: module.id,
   selector: 'writers-list',
   templateUrl: 'writers.component.html',
-  directives: [WriterFormComponent],
   styleUrls: ['writers.component.css']
 })
 

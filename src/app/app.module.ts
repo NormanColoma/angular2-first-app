@@ -5,25 +5,19 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { WriterService } from './writers/writer.service';
-import { FormsModule }   from '@angular/forms';
 import { routing,
   appRoutingProviders } from './app.routes';
-import {WriterDetailsComponent} from "./writer-details/writer-details.component";
-import {WritersComponent} from "./writers/writers.component";
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {BooksComponent} from "./books/books.component";
+import {WritersModule} from "./writers/writers.module";
+import {DashboardModule} from "./dashboard/dashboard.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    WriterDetailsComponent,
-    WritersComponent,
-    DashboardComponent,
-    BooksComponent
   ],
   imports:      [
     BrowserModule,
-    FormsModule,
+    DashboardModule,
+    WritersModule,
     routing
   ],
   bootstrap:    [AppComponent],
