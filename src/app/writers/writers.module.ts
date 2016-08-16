@@ -9,6 +9,7 @@ import {WriterFormComponent} from "../writer-form/writer-form.component";
 import {FormsModule} from "@angular/forms";
 import {WriterDetailsComponent} from "../writer-details/writer-details.component";
 import {BooksComponent} from "../books/books.component";
+import {writersRouting} from "./writers.routing";
 
 @NgModule({
   declarations: [
@@ -21,8 +22,7 @@ import {BooksComponent} from "../books/books.component";
     BrowserModule,
     CommonModule,
     FormsModule,
-  ],
-  exports: [WritersComponent, WriterDetailsComponent, BooksComponent],
-  providers:    []
+    writersRouting
+  ]
 })
 export class WritersModule {}

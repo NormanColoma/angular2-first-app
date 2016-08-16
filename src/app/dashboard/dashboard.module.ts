@@ -4,6 +4,7 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 import {DashboardComponent} from "./dashboard.component";
+import {dashboardRouting} from "./dashboard.routing";
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import {DashboardComponent} from "./dashboard.component";
   ],
   imports:      [
     BrowserModule,
-  ],
-  exports:[DashboardComponent]
+    dashboardRouting
+  ]
 })
 export class DashboardModule {}
