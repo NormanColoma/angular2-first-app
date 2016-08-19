@@ -5,10 +5,12 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 import {DashboardComponent} from "./dashboard.component";
 import {dashboardRouting} from "./dashboard.routing";
+import {HighlightDirective} from "./highlight.directive";
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    HighlightDirective
   ],
   imports:      [
     BrowserModule,
