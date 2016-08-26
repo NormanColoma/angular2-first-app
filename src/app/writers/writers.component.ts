@@ -23,7 +23,7 @@ export class WritersComponent implements OnInit {
               private writerService: WriterService) { }
 
   getWriters(){
-    this.writerService.getWriters().then(writers => this.writers = writers);
+    this.writerService.getWriters().subscribe(writers => this.writers = writers);
   }
   ngOnInit() {
     this.getWriters();
@@ -34,11 +34,11 @@ export class WritersComponent implements OnInit {
   }
 
   gotoDetail() {
-    this.router.navigate(['/detail', this.selectedWriter.id]);
+    this.router.navigate(['/detail', this.selectedWriter._id]);
   }
 
   gotoBooks(){
-    this.router.navigate(['/writers', this.selectedWriter.id, 'books']);
+    this.router.navigate(['/writers', this.selectedWriter._id, 'books']);
   }
 
 

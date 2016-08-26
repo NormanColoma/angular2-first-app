@@ -18,11 +18,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.writerService.getWriters()
-      .then(writers => this.writers = writers.slice(1, 4));
+      .subscribe(writers => this.writers = writers.slice(1, 4));
   }
 
   seeDetail(writer: Writer) {
-    let link = ['/detail', writer.id];
+    let link = ['/detail', writer._id];
     this.router.navigate(link);
   }
 

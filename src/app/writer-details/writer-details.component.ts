@@ -20,9 +20,8 @@ export class WriterDetailsComponent implements OnInit, OnDestroy{
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      let id = +params['id'];
-      this.writerService.getWriter(id)
-        .then(writer => this.writer = writer);
+      let id = params['id'];
+      this.writerService.getWriter(id).subscribe(writer => this.writer = writer);
     });
   }
 
