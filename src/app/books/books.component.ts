@@ -16,6 +16,10 @@ export class BooksComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private writerService: WriterService) { }
 
+  /**
+   * Extracts id paramater (which represents the id of the Writer) and fecths the books
+   * @return {Json} -> Array of books
+   */
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       let id = params['id'];
