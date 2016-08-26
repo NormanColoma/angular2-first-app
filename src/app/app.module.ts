@@ -9,6 +9,7 @@ import { routing,
   appRoutingProviders } from './app.routes';
 import {WritersModule} from "./writers/writers.module";
 import {DashboardModule} from "./dashboard/dashboard.module";
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {DashboardModule} from "./dashboard/dashboard.module";
     BrowserModule,
     DashboardModule,
     WritersModule,
+    HttpModule,
     routing
   ],
   bootstrap:    [AppComponent],
