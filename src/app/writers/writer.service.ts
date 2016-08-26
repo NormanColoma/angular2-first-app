@@ -1,3 +1,4 @@
+import {Book} from "../books/book";
 /**
  * Created by Norman on 05/08/2016.
  */
@@ -25,7 +26,7 @@ export class WriterService {
 
   private extractData(res: Response) {
     let body = res.json();
-    return body || { };
+    return body.data || { };
   }
 
   /**
@@ -33,7 +34,7 @@ export class WriterService {
    * @param id -> Id of the writer which is going to be retrieved
    * @returns {Promise<TResult>}-> Promise containing the writer found
    */
-  getWriter(id: string) {
+  getWriter(id: string): Observable<Writer> {
     const url = this.apiUrl+"/"+id;
     return this.http.get(url).map(this.extractData);
   }
@@ -43,7 +44,7 @@ export class WriterService {
    * @param id-> Id of the writer
    * @returns {Promise<TResult>} -> Promise containing all the books of a Writer
    */
-  getBooks(id: string){
+  getBooks(id: string): Observable <Book[]>{
     const url = this.apiUrl+"/"+id+"/books";
     return this.http.get(url).map(this.extractData);
   }
