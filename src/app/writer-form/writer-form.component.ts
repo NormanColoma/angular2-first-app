@@ -1,3 +1,4 @@
+import {WriterService} from "../writers/writer.service";
 import { Component, OnInit, Input } from '@angular/core';
 import {Writer} from "../writers/writer";
 
@@ -12,17 +13,21 @@ export class WriterFormComponent implements OnInit {
   currentWriter: Writer;
   @Input()
   writers: Writer [];
-  constructor() { }
+
+  constructor(private writerService: WriterService) { }
 
   ngOnInit() {
     this.currentWriter = new Writer();
   }
 
-  addWriter(){
-    let writer = new Writer();
-    writer.name = this.currentWriter.name;
-    writer.total_books = 0;
-    this.writers.push(writer);
+  /**
+   * Takes the name of the writer from the form and suscribe to addWriter service and
+   * push it to the current array of writers
+   * @param  {string} name -> Name of the writer
+   *
+   */
+  addWriter(name: string){
+    this.writerService.addWriter(name).subscribe(writer => this.writers.push(writer));
   }
 
 }

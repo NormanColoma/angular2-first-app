@@ -10,6 +10,6 @@
         Name is required
       </div>
     </div>
-    <input [disabled]="!writerForm.form.valid" type="submit" value="Add" (click)="addWriter()">
+    <input [disabled]="!writerForm.form.valid" type="submit" value="Add" (click)="addWriter(currentWriter.name)">
   </form>
 </div>

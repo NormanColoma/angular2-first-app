@@ -6,6 +6,7 @@ import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
 import {Writer} from "./writer";
 import {Book} from "../books/book";
+import { Headers, RequestOptions } from '@angular/http';
 
 /**
  * This service will manage the operations related to Writers against the API Rest Backend
@@ -31,6 +32,7 @@ export class WriterService {
    */
   private extractData(res: Response) {
     let body = res.json();
+    console.log(body.data);
     return body.data || { };
   }
 
@@ -52,5 +54,19 @@ export class WriterService {
   getBooks(id: string): Observable <Book[]>{
     const url = this.apiUrl+"/"+id+"/books";
     return this.http.get(url).map(this.extractData);
+  }
+
+  /**
+   * Takes the name of the writer and post it to the API
+   * @param  {String} name -> Name of the writer to be inserted
+   * @return {Observable<Writer>} -> Writer data
+   */
+  addWriter(name: String): Observable<Writer>{
+    let body = JSON.stringify({ name });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(this.apiUrl, body, options)
+                   .map(this.extractData);
   }
 }
