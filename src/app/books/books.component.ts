@@ -13,6 +13,7 @@ export class BooksComponent implements OnInit {
 
   sub:any;
   books: Book [] = [];
+  writer_name: string;
   constructor(private route: ActivatedRoute,
               private writerService: WriterService) { }
 
@@ -25,6 +26,8 @@ export class BooksComponent implements OnInit {
       let id = params['id'];
       this.writerService.getBooks(id)
         .subscribe(books => this.books = books);
+      this.writerService.getWriter(id)
+        .subscribe(writer=> this.writer_name = writer.name);
     });
   }
 
