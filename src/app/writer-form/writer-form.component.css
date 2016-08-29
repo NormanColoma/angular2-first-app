@@ -1,7 +1,7 @@
 .writer-add-form-container{
   float: left;
-  margin-right: 40px;
-  margin-left: 40px;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .ng-valid[required] {
@@ -13,5 +13,5 @@
 }
 
 .alert{
-  color:red;
+  margin-top: 15px;
 }

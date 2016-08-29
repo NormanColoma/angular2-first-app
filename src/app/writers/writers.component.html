@@ -1,25 +1,22 @@
 <div class="writers-container">
-  <p>
-    Our most famous Writers:
-  </p>
+  <h1>Writers <small>Our most famous Writers:</small></h1>
   <ul>
-    <li *ngFor="let writer of writers" (click)="onSelect(writer)">
+    <li *ngFor="let writer of writers" >
       <div class="writer-content">
-        <h2>{{writer.name}}</h2>
+        <h3 (click)="onSelect(writer)">{{writer.name}}</h3>
         <div class="writer-content-info">
           <p class="books">Registered books: <span>{{writer.total_books}}</span></p>
         </div>
       </div>
     </li>
   </ul>
+  <div *ngIf="selectedWriter" class="writer-info-container">
+    <h3>{{selectedWriter.name | uppercase}}</h3>
+    <p>
+      {{selectedWriter.short_desc}}
+    </p>
+    <button (click)="gotoDetail()" class="btn btn-default">Read More</button>
+    <button (click)="gotoBooks()" class="btn btn-default">See Books</button>
+  </div>
 </div>
 <writer-form [writers]="writers"></writer-form>
-<div *ngIf="selectedWriter" class="writer-info-container">
-  <h3>{{selectedWriter.name | uppercase}}</h3>
-  <p>
-    {{selectedWriter.short_desc}}
-  </p>
-  <button (click)="gotoDetail()">Read More</button>
-  <button (click)="gotoBooks()">See Books</button>
-</div>
-

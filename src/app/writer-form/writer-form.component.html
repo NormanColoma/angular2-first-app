@@ -1,15 +1,18 @@
 <div class="writer-add-form-container">
-  <h3>Add Writer</h3>
+  <div class="page-header">
+    <h3>Add Writer</h3>
+  </div>
   <p>Didn't you find the Writer you were looking for? Just add it!</p>
   <form #writerForm="ngForm">
     <div>
       <label for="name">Name of the Writer: </label>
       <input type="text" [(ngModel)]="currentWriter.name" name="name" id="name"
              #name="ngModel" required>
-      <div [hidden]="name.valid || name.pristine" class="alert">
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger" role="alert">
         Name is required
       </div>
     </div>
-    <input [disabled]="!writerForm.form.valid" type="submit" value="Add" (click)="addWriter(currentWriter.name)">
+    <input class="btn btn-primary"
+    [disabled]="!writerForm.form.valid" type="submit" value="Add" (click)="addWriter(currentWriter.name)">
   </form>
 </div>

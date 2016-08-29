@@ -5,15 +5,23 @@
   float:left;
 }
 
+.writers-container.page-header {
+    margin: 0px !important;
+}
+
 .writers-container ul{
   list-style: none;
   padding: 0px;
+  float: left;
 }
 
 .writers-container ul li{
   margin-bottom: 40px;
 }
 
+.writer-content h3{
+  cursor: pointer;
+}
 .writer-content-info{
 }
 
@@ -28,8 +36,5 @@
   color: black !important;
 }
 .writer-info-container{
-  width: 500px;
   float:left;
 }
-
-
