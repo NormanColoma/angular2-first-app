@@ -4,12 +4,11 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 import {WritersComponent} from "./writers.component";
-import {CommonModule} from "@angular/common";
 import {WriterFormComponent} from "../writer-form/writer-form.component";
-import {FormsModule} from "@angular/forms";
 import {WriterDetailsComponent} from "../writer-details/writer-details.component";
 import {BooksComponent} from "../books/books.component";
 import {writersRouting} from "./writers.routing";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -20,9 +19,8 @@ import {writersRouting} from "./writers.routing";
   ],
   imports:      [
     BrowserModule,
-    CommonModule,
-    FormsModule,
-    writersRouting
+    writersRouting,
+    SharedModule
   ]
 })
 export class WritersModule {}
