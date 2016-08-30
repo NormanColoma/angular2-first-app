@@ -11,9 +11,10 @@ import {WritersModule} from "./writers/writers.module";
 import {DashboardModule} from "./dashboard/dashboard.module";
 import {HttpModule} from '@angular/http';
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports:      [
     BrowserModule,

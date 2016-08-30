@@ -7,7 +7,7 @@ import { Book } from './book';
   moduleId: module.id,
   selector: 'writer-books',
   templateUrl: 'books.component.html',
-  styleUrls: ['books.component.css']
+  styleUrls: ['books.component.css', '../app.component.css']
 })
 export class BooksComponent implements OnInit {
 

@@ -8,7 +8,7 @@ import { WriterService } from '../writers/writer.service';
   moduleId: module.id,
   selector: 'writers-dashboard',
   templateUrl: 'dashboard.component.html',
-  styleUrls: ['dashboard.component.css']
+  styleUrls: ['dashboard.component.css', '../app.component.css']
 })
 export class DashboardComponent implements OnInit {
 
