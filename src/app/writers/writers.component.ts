@@ -1,7 +1,8 @@
+import {WriterService} from "../core/writer.service";
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Writer } from './writer';
-import { WriterService } from './writer.service';
+
 
 
 @Component({

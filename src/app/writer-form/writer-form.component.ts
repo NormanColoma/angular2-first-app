@@ -1,4 +1,4 @@
-import {WriterService} from "../writers/writer.service";
+import {WriterService} from "../core/writer.service";
 import { Component, OnInit, Input } from '@angular/core';
 import {Writer} from "../writers/writer";
 

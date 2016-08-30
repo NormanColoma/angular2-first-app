@@ -1,6 +1,6 @@
+import {WriterService} from "../core/writer.service";
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WriterService } from '../writers/writer.service';
 import { Book } from './book';
 
 @Component({
