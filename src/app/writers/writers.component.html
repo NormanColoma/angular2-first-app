@@ -1,23 +1,23 @@
-<div class="writers-container">
+<div class="writers-container col-md-12">
   <h1>Writers <small>Our most famous Writers:</small></h1>
-  <ul>
-    <li *ngFor="let writer of writers" >
-      <div class="writer-content">
-        <h3 (click)="onSelect(writer)">{{writer.name}}</h3>
-        <div class="writer-content-info">
+  <ul class="row col-md-6">
+    <li *ngFor="let writer of writers" class="col-md-12">
+      <div class="panel panel-default writer-panel">
+        <div class="panel-heading"><h3>{{writer.name}}</h3></div>
+        <div class="panel-body">
+          <p>
+            {{writer.short_desc}}
+          </p>
           <p class="books">Registered books: <span>{{writer.total_books}}</span></p>
+          <div class="writer-panel-buttons">
+            <button (click)="gotoDetail(writer._id)" class="btn btn-default">Read More</button>
+            <button (click)="gotoBooks(writer._id)" class="btn btn-default">See Books</button>
+          </div>
         </div>
       </div>
     </li>
   </ul>
-  <div *ngIf="selectedWriter" class="writer-info-container">
-    <h3>{{selectedWriter.name | uppercase}}</h3>
-    <p>
-      {{selectedWriter.short_desc}}
-    </p>
-    <button (click)="gotoDetail()" class="btn btn-default">Read More</button>
-    <button (click)="gotoBooks()" class="btn btn-default">See Books</button>
-  </div>
+  <writer-form [writers]="writers"></writer-form>
 </div>
   <nav aria-label="Page navigation" class="writer-navigation">
     <ul class="pagination">
@@ -34,4 +34,3 @@
       </li>
     </ul>
   </nav>
-<writer-form [writers]="writers"></writer-form>

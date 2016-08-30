@@ -3,6 +3,7 @@
   font-family: sans-serif;
   font-weight: 100;
   float:left;
+  width: 100%;
 }
 
 .writers-container.page-header {
@@ -46,4 +47,13 @@
 
 .writer-navigation a{
   cursor: pointer;
+}
+
+.writer-panel{
+  float:left;
+  width:100%;
+}
+
+.writer-panel-buttons{
+  float:right;
 }

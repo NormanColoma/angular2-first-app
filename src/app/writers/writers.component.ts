@@ -21,7 +21,6 @@ export class WritersComponent implements OnInit {
   previousPage: number;
   next: boolean;
   previous: boolean;
-  selectedWriter: Writer;
   active = true;
 
   constructor(private router: Router,
@@ -40,16 +39,12 @@ export class WritersComponent implements OnInit {
     this.previous = false;
   }
 
-  onSelect(writer: Writer){
-    this.selectedWriter = writer;
+  gotoDetail(id:number) {
+    this.router.navigate(['/detail', id]);
   }
 
-  gotoDetail() {
-    this.router.navigate(['/detail', this.selectedWriter._id]);
-  }
-
-  gotoBooks(){
-    this.router.navigate(['/writers', this.selectedWriter._id, 'books']);
+  gotoBooks(id:number){
+    this.router.navigate(['/writers', id, 'books']);
   }
 
   gotoPage(page:number){
@@ -68,7 +63,6 @@ export class WritersComponent implements OnInit {
       this.previous = true;
       this.previousPage = page-1;
     }
-    this.selectedWriter = null;
     this.writerService.getWritersPaginated(page).subscribe(writers => this.writers = writers);
   }
 
