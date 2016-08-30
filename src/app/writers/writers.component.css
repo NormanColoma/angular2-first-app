@@ -38,3 +38,12 @@
 .writer-info-container{
   float:left;
 }
+
+.writer-navigation{
+  float:left;
+  width: 100%;
+}
+
+.writer-navigation a{
+  cursor: pointer;
+}

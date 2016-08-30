@@ -25,6 +25,15 @@ export class WriterService {
     return this.http.get(this.apiUrl).map(this.extractData);
   }
 
+  getWritersPaginated(page: number): Observable<Writer[]>{
+    let url = this.apiUrl+"/page/"+page;
+    return this.http.get(url).map(this.extractData);
+  }
+
+  getTotalWriters(): Observable<number>{
+    let url = this.apiUrl+"/total";
+      return this.http.get(url).map(this.extractData);
+  }
   /**
    * Utility function for extracting date from Observable Response. Extracts and return the data.
    * @param  {Response} res-> Observable Response
@@ -32,7 +41,6 @@ export class WriterService {
    */
   private extractData(res: Response) {
     let body = res.json();
-    console.log(body.data);
     return body.data || { };
   }
 

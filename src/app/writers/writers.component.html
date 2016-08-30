@@ -10,6 +10,21 @@
       </div>
     </li>
   </ul>
+  <nav aria-label="Page navigation" class="writer-navigation">
+    <ul class="pagination">
+      <li>
+        <a *ngIf="previous" aria-label="Previous" (click)="gotoPage(previousPage)">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li *ngFor="let page of pages;"><a (click)="gotoPage(page-1)">{{page}}</a></li>
+      <li>
+        <a *ngIf="next" aria-label="Next" (click)="gotoPage(nextPage)">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
   <div *ngIf="selectedWriter" class="writer-info-container">
     <h3>{{selectedWriter.name | uppercase}}</h3>
     <p>
