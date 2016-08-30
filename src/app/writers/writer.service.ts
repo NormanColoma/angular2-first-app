@@ -25,11 +25,20 @@ export class WriterService {
     return this.http.get(this.apiUrl).map(this.extractData);
   }
 
+  /**
+   * Fecth a paginated collection of writers
+   * @param -> Number of writers to skip
+   * @return {Observable<Writer[]>} -> Collection of Writers
+   */
   getWritersPaginated(page: number): Observable<Writer[]>{
     let url = this.apiUrl+"/page/"+page;
     return this.http.get(url).map(this.extractData);
   }
 
+  /**
+   * Get the total numbers of writers
+   * @return {Observable<number>} -> Total number of writers
+   */
   getTotalWriters(): Observable<number>{
     let url = this.apiUrl+"/total";
       return this.http.get(url).map(this.extractData);

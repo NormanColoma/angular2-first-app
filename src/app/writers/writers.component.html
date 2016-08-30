@@ -10,6 +10,15 @@
       </div>
     </li>
   </ul>
+  <div *ngIf="selectedWriter" class="writer-info-container">
+    <h3>{{selectedWriter.name | uppercase}}</h3>
+    <p>
+      {{selectedWriter.short_desc}}
+    </p>
+    <button (click)="gotoDetail()" class="btn btn-default">Read More</button>
+    <button (click)="gotoBooks()" class="btn btn-default">See Books</button>
+  </div>
+</div>
   <nav aria-label="Page navigation" class="writer-navigation">
     <ul class="pagination">
       <li>
@@ -25,13 +34,4 @@
       </li>
     </ul>
   </nav>
-  <div *ngIf="selectedWriter" class="writer-info-container">
-    <h3>{{selectedWriter.name | uppercase}}</h3>
-    <p>
-      {{selectedWriter.short_desc}}
-    </p>
-    <button (click)="gotoDetail()" class="btn btn-default">Read More</button>
-    <button (click)="gotoBooks()" class="btn btn-default">See Books</button>
-  </div>
-</div>
 <writer-form [writers]="writers"></writer-form>
