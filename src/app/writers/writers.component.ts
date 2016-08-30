@@ -67,6 +67,7 @@ export class WritersComponent implements OnInit {
       this.previous = true;
       this.previousPage = page-1;
     }
+    this.selectedWriter = null;
     this.writerService.getWritersPaginated(page).subscribe(writers => this.writers = writers);
   }
 
