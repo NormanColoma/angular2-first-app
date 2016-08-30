@@ -27,7 +27,12 @@ export class WriterFormComponent implements OnInit {
    *
    */
   addWriter(name: string){
-    this.writerService.addWriter(name).subscribe(writer => this.writers.push(writer));
+    this.writerService.addWriter(name).subscribe(writer => this.addWriterToView(writer));
+  }
+
+  addWriterToView(writer: Writer){
+    if(this.writers.length < 3)
+      this.writers.push(writer);
   }
 
 }
