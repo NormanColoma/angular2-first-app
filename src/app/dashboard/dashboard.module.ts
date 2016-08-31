@@ -5,15 +5,15 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 import {DashboardComponent} from "./dashboard.component";
 import {dashboardRouting} from "./dashboard.routing";
-import {HighlightDirective} from "./highlight.directive";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    HighlightDirective
+    DashboardComponent
   ],
   imports:      [
     BrowserModule,
+    SharedModule,
     dashboardRouting
   ]
 })

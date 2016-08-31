@@ -4,7 +4,7 @@
 import { Book } from '../books/book';
 
 export class Writer{
-  id: number;
+  _id: string;
   name: string;
   about: string;
   short_desc: string;

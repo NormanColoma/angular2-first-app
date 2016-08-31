@@ -3,17 +3,26 @@
   font-family: sans-serif;
   font-weight: 100;
   float:left;
+  width: 100%;
+}
+
+.writers-container.page-header {
+    margin: 0px !important;
 }
 
 .writers-container ul{
   list-style: none;
   padding: 0px;
+  float: left;
 }
 
 .writers-container ul li{
   margin-bottom: 40px;
 }
 
+.writer-content h3{
+  cursor: pointer;
+}
 .writer-content-info{
 }
 
@@ -28,8 +37,23 @@
   color: black !important;
 }
 .writer-info-container{
-  width: 500px;
   float:left;
 }
 
+.writer-navigation{
+  float:left;
+  width: 100%;
+}
 
+.writer-navigation a{
+  cursor: pointer;
+}
+
+.writer-panel{
+  float:left;
+  width:100%;
+}
+
+.writer-panel-buttons{
+  float:right;
+}

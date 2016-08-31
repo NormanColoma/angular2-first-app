@@ -1,5 +1,11 @@
 .main-container{
-  padding: 0 16px;
-  float:left;
-  width: 95%;
+  margin-top: 60px;
+}
+
+.primary-color{
+  color: #337ab7;
+}
+
+.highlight{
+  color: #4682B4;
 }

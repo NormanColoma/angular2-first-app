@@ -1,10 +1,24 @@
-<div class="main-container">
-  <h1>
-    {{title}}
-  </h1>
-  <nav>
-    <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
-    <a [routerLink]="['/writers']" routerLinkActive="active">Writers</a>
+<div class="container-fluid main-container">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-brand">
+        <a>
+          {{title}}
+        </a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
+          </li>
+          <li>
+            <a [routerLink]="['/writers']" routerLinkActive="active">Writers</a>
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
   </nav>
-  <router-outlet></router-outlet>
+  <router-outlet class=""></router-outlet>
 </div>

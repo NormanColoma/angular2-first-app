@@ -1,6 +1,6 @@
 <div *ngIf="writer" class="writer-details-container">
   <h1>{{writer.name}}</h1>
   <p>{{writer.about}}</p>
-  <p>We have registered {{writer.total_books}} books about {{writer.name}} in our collection.</p>
-  <button (click)="goBack()">Back</button>
+  <p>We have registered <strong> {{writer.total_books}} books </strong> about {{writer.name}} in our collection.</p>
+  <button (click)="goBack()" class="btn btn-default">Back</button>
 </div>

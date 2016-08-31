@@ -1,7 +1,7 @@
+import {WriterService} from "../core/writer.service";
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Writer } from '../writers/writer';
 import { ActivatedRoute } from '@angular/router';
-import { WriterService } from '../writers/writer.service';
 
 @Component({
   moduleId: module.id,
@@ -20,9 +20,8 @@ export class WriterDetailsComponent implements OnInit, OnDestroy{
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      let id = +params['id'];
-      this.writerService.getWriter(id)
-        .then(writer => this.writer = writer);
+      let id = params['id'];
+      this.writerService.getWriter(id).subscribe(writer => this.writer = writer);
     });
   }
 

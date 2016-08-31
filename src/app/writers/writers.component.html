@@ -1,25 +1,36 @@
-<div class="writers-container">
-  <p>
-    Our most famous Writers:
-  </p>
-  <ul>
-    <li *ngFor="let writer of writers" (click)="onSelect(writer)">
-      <div class="writer-content">
-        <h2>{{writer.name}}</h2>
-        <div class="writer-content-info">
+<div class="writers-container col-md-12">
+  <h1>Writers <small>Our most famous Writers:</small></h1>
+  <ul class="row col-md-6">
+    <li *ngFor="let writer of writers" class="col-md-12">
+      <div class="panel panel-default writer-panel">
+        <div class="panel-heading"><h3>{{writer.name}}</h3></div>
+        <div class="panel-body">
+          <p>
+            {{writer.short_desc}}
+          </p>
           <p class="books">Registered books: <span>{{writer.total_books}}</span></p>
+          <div class="writer-panel-buttons">
+            <button (click)="gotoDetail(writer._id)" class="btn btn-default">Read More</button>
+            <button (click)="gotoBooks(writer._id)" class="btn btn-default">See Books</button>
+          </div>
         </div>
       </div>
     </li>
   </ul>
+  <writer-form [writers]="writers"></writer-form>
 </div>
-<writer-form [writers]="writers"></writer-form>
-<div *ngIf="selectedWriter" class="writer-info-container">
-  <h3>{{selectedWriter.name | uppercase}}</h3>
-  <p>
-    {{selectedWriter.short_desc}}
-  </p>
-  <button (click)="gotoDetail()">Read More</button>
-  <button (click)="gotoBooks()">See Books</button>
-</div>
-
+  <nav aria-label="Page navigation" class="writer-navigation">
+    <ul class="pagination">
+      <li>
+        <a *ngIf="previous" aria-label="Previous" (click)="gotoPage(previousPage)">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li *ngFor="let page of pages;"><a (click)="gotoPage(page-1)">{{page}}</a></li>
+      <li>
+        <a *ngIf="next" aria-label="Next" (click)="gotoPage(nextPage)">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>

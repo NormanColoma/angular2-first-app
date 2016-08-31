@@ -1,15 +1,23 @@
 <div class="books-container">
+  <div class="page-header">
+    <h2>{{writer_name}}'s books</h2>
+    <span myHighlight>{{books.length}} books</span>
+  </div>
   <div *ngIf="books.length > 0">
     <ul>
       <li *ngFor="let book of books">
-        <h3>{{book.title}}</h3>
-        <p><strong>Synopsis:</strong> {{book.synopsis}}</p>
-        <p><strong>Genre:</strong> {{book.genre}}</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h3>{{book.title}}</h3>
+            <p><strong>Synopsis:</strong> {{book.synopsis}}</p>
+            <p><strong>Genre:</strong> {{book.genre}}</p>
+          </div>
+        </div>
       </li>
     </ul>
   </div>
-  <div *ngIf ="books.length === 0">
-    <p>There are no books available at this moment</p>
+  <div class="alert alert-info" role="alert" *ngIf ="books.length === 0">
+    <p><strong>No books!</strong> There are no books available at this moment</p>
   </div>
-  <button (click)="goBack()">Back</button>
+  <button (click)="goBack()" class="btn btn-default">Back</button>
 </div>
