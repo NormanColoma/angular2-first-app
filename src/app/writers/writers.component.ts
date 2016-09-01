@@ -21,7 +21,6 @@ export class WritersComponent implements OnInit {
   previousPage: number;
   next: boolean;
   previous: boolean;
-  active = true;
 
   constructor(private router: Router,
               private writerService: WriterService) {}
