@@ -86,4 +86,17 @@ export class WriterService {
     return this.http.post(this.apiUrl, body, options)
                    .map(this.extractData);
   }
+
+  deleteWriter(id: string){
+    const url = this.apiUrl+"/"+id;
+    return this.http.delete(url).map(this.handleOperation);
+  }
+
+  private handleOperation(res: Response){
+    if(res.status === 204){
+      return "Deleted";
+    }else{
+      return "Error";
+    }
+  }
 }

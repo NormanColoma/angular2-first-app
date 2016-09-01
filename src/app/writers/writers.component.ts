@@ -72,6 +72,16 @@ export class WritersComponent implements OnInit {
     }
   }
 
+  deleteWriter(id:number){
+    this.writerService.deleteWriter(String(id)).subscribe(status => this.removeWriterFromArray(status,id));
+  }
+
+  removeWriterFromArray(status: string, id: number){
+    if(status === "Deleted"){
+      let index = this.writers.findIndex(writer=> writer._id === String(id));
+      this.writers.splice(index,1);
+    }
+  }
 
 
 }
