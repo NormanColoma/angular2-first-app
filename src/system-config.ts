@@ -1,18 +1,22 @@
-"use strict";
-
-// SystemJS configuration file, see links for more information
-// https://github.com/systemjs/systemjs
-// https://github.com/systemjs/systemjs/blob/master/docs/config-api.md
-
-/***********************************************************************************************
- * User Configuration.
- **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'app': 'src/app',
+  'main': 'main.js',
+
+  '@angular/core': 'vendor/@angular/core/bundles/core.umd.js',
+  '@angular/common': 'vendor/@angular/common/bundles/common.umd.js',
+  '@angular/compiler': 'vendor/@angular/compiler/bundles/compiler.umd.js',
+  '@angular/platform-browser': 'vendor/@angular/platform-browser/bundles/platform-browser.umd.js',
+  '@angular/platform-browser-dynamic': 'vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+  '@angular/http': 'vendor/@angular/http/bundles/http.umd.js',
+  '@angular/router': 'vendor/@angular/router/bundles/router.umd.js',
+  '@angular/forms': 'vendor/@angular/forms/bundles/forms.umd.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'app': {main: 'main', defaultExtension: 'js'},
+  'rxjs': {main: 'Rx.js', defaultExtension: 'js'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,19 +39,13 @@ const barrels: string[] = [
 
   // App specific barrels.
   'app',
-  'app/shared',
-  'app/writer',
-  'app/writers',
-  'app/writer-details',
-  'app/dashboard',
-  'app/books',
-  'app/writer-form',
+  'app/shared'
   /** @cli-barrel */
 ];
 
 const cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
-  cliSystemConfigPackages[barrelName] = { main: 'index' };
+  cliSystemConfigPackages[barrelName] = {main: 'index'};
 });
 
 /** Type declaration for ambient System. */
@@ -64,4 +62,4 @@ System.config({
 });
 
 // Apply the user's configuration.
-System.config({ map, packages });
+System.config({map, packages});

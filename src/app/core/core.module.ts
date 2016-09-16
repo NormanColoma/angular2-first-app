@@ -1,3 +1,4 @@
+import './rxjs-extensions';
 import {
   ModuleWithProviders, NgModule,
   Optional, SkipSelf }       from '@angular/core';
