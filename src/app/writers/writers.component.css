@@ -57,3 +57,8 @@
 .writer-panel-buttons{
   float:right;
 }
+
+.writer-remove-option button{
+  float: right !important;
+  margin-top: 15px;
+}

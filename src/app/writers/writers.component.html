@@ -3,7 +3,14 @@
   <ul class="row col-md-6">
     <li *ngFor="let writer of writers" class="col-md-12">
       <div class="panel panel-default writer-panel">
-        <div class="panel-heading"><h3>{{writer.name}}</h3></div>
+        <div class="panel-heading col-md-12">
+          <div class="col-md-6"><h3>{{writer.name}}</h3></div>
+          <div class="writer-remove-option col-md-6">
+            <button (click)="deleteWriter(writer._id)" type="button" class="btn btn-danger" aria-label="Remove Writer">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
         <div class="panel-body">
           <p>
             {{writer.short_desc}}

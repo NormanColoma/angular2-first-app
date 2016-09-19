@@ -21,7 +21,7 @@ export class WritersComponent implements OnInit {
   previousPage: number;
   next: boolean;
   previous: boolean;
-  active = true;
+  currentPage: number;
 
   constructor(private router: Router,
               private writerService: WriterService) {}
@@ -63,6 +63,7 @@ export class WritersComponent implements OnInit {
       this.previous = true;
       this.previousPage = page-1;
     }
+    this.currentPage = page+1;
     this.writerService.getWritersPaginated(page).subscribe(writers => this.writers = writers);
   }
 
@@ -73,6 +74,23 @@ export class WritersComponent implements OnInit {
     }
   }
 
+  deleteWriter(id:number){
+    this.writerService.deleteWriter(String(id)).subscribe(status => this.removeWriterFromArray(status,id));
+  }
+
+  removeWriterFromArray(status: string, id: number){
+    if(status === "Deleted"){
+      let index = this.writers.findIndex(writer=> writer._id === String(id));
+      this.writers.splice(index,1);
+      if(this.writers.length === 0){
+        let index = this.pages.findIndex(page=> page === this.currentPage);
+        this.pages.splice(index,1);
+        this.totalPages--;
+        if(this.currentPage-2 > 0)
+          this.gotoPage(this.currentPage-2);
+      }
+    }
+  }
 
 
 }

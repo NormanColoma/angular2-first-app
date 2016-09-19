@@ -3,7 +3,7 @@
  */
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable }     from 'rxjs/Observable';
+import { Observable }     from 'rxjs';
 import {Book} from "../books/book";
 import { Headers, RequestOptions } from '@angular/http';
 import {Writer} from "../writers/writer";
@@ -85,5 +85,18 @@ export class WriterService {
 
     return this.http.post(this.apiUrl, body, options)
                    .map(this.extractData);
+  }
+
+  deleteWriter(id: string){
+    const url = this.apiUrl+"/"+id;
+    return this.http.delete(url).map(this.handleOperation);
+  }
+
+  private handleOperation(res: Response){
+    if(res.status === 204){
+      return "Deleted";
+    }else{
+      return "Error";
+    }
   }
 }
