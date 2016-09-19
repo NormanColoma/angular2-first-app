@@ -1,4 +1,6 @@
-export class Angular2AppPage {
+import { browser, element, by } from 'protractor/globals';
+
+export class MigrationProjectPage {
   navigateTo() {
     return browser.get('/');
   }

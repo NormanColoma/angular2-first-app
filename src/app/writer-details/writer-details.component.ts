@@ -4,7 +4,6 @@ import { Writer } from '../writers/writer';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  moduleId: module.id,
   selector: 'writer-details',
   templateUrl: 'writer-details.component.html',
   styleUrls: ['writer-details.component.css']

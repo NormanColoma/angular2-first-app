@@ -5,7 +5,6 @@ import { Writer } from '../writers/writer';
 
 
 @Component({
-  moduleId: module.id,
   selector: 'writers-dashboard',
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.css', '../app.component.css']

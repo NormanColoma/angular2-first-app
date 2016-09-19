@@ -6,7 +6,6 @@ import { Writer } from './writer';
 
 
 @Component({
-  moduleId: module.id,
   selector: 'writers-list',
   templateUrl: 'writers.component.html',
   styleUrls: ['writers.component.css']

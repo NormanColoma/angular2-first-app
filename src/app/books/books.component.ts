@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Book } from './book';
 
 @Component({
-  moduleId: module.id,
   selector: 'writer-books',
   templateUrl: 'books.component.html',
   styleUrls: ['books.component.css', '../app.component.css']

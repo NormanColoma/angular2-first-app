@@ -1,10 +1,10 @@
-import { Angular2AppPage } from './app.po';
+import { MigrationProjectPage } from './app.po';
 
-describe('angular2-app App', function() {
-  let page: Angular2AppPage;
+describe('migration-project App', function() {
+  let page: MigrationProjectPage;
 
   beforeEach(() => {
-    page = new Angular2AppPage();
+    page = new MigrationProjectPage();
   });
 
   it('should display message saying app works', () => {

@@ -3,7 +3,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Writer} from "../writers/writer";
 
 @Component({
-  moduleId: module.id,
   selector: 'writer-form',
   templateUrl: 'writer-form.component.html',
   styleUrls: ['writer-form.component.css']
